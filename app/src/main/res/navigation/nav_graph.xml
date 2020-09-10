@@ -7,13 +7,8 @@
 
     <fragment
         android:id="@+id/overviewFragment"
-        android:name="com.teakave.beeping.presentation.feature.OverviewFragment"
-        android:label="OverviewFragment" />
-
-    <fragment
-        android:id="@+id/invoiceListFragment"
-        android:name="com.teakave.beeping.InvoiceListFragment"
-        android:label="fragment_invoice_list"
-        tools:layout="@layout/fragment_invoice_list" />
+        android:name="com.teakave.noteapp.presentation.feature.overview.OverviewFragment"
+        android:label="OverviewFragment"
+        tools:layout="@layout/fragment_overview" />
 
 </navigation>

@@ -1,4 +1,4 @@
-package com.teakave.beeping
+package com.teakave.noteapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

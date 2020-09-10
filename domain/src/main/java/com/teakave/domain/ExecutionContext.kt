@@ -1,6 +1,5 @@
 package com.teakave.domain
 
-
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
