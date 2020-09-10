@@ -1,4 +1,4 @@
-package com.teakave.beeping
+package com.teakave.noteapp
 
 import org.junit.Test
 
