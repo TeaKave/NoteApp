@@ -16,8 +16,11 @@ object Versions {
     const val gradle = "4.0.1"
     const val kotlin = "1.3.50"
     const val appcompat = "1.2.0"
+
     /* test */
     const val junit = "4.13"
+    const val kotest = "4.2.4"
+    const val mockito = "1.10.0"
 
     const val googleAuth = "18.1.0"
 
@@ -32,6 +35,8 @@ object Versions {
     const val junitExtension = "1.1.1"
     const val espresso = "3.2.0"
     const val coroutines = "1.3.7"
+    const val koin = "2.1.6"
+    const val room = "2.2.5"
 }
 
 object Libs {
@@ -39,7 +44,8 @@ object Libs {
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     const val ktxCore = "androidx.core:core-ktx:${Versions.ktxCore}"
     const val googleAuth = "com.google.android.gms:play-services-auth:${Versions.googleAuth}"
-    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    const val constraintLayout =
+        "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     const val navigation = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     const val legacySupport = "androidx.legacy:legacy-support-v4:${Versions.legacySupport}"
@@ -48,10 +54,21 @@ object Libs {
     const val annotation = "androidx.annotation:annotation:${Versions.annotation}"
     const val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+    const val koinAndroid = "org.koin:koin-android:${Versions.koin}"
+    const val koinScope = "org.koin:koin-androidx-scope:${Versions.koin}"
+    const val koinViewModel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
+    const val room = "androidx.room:room-runtime:${Versions.room}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
+
 }
 
 object TestLibs {
     const val junit = "junit:junit:${Versions.junit}"
     const val junitExtension = "androidx.test.ext:junit:${Versions.junitExtension}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+    const val kotestRunner = "io.kotest:kotest-runner-junit5:${Versions.kotest}"
+    const val kotestAssertions = "io.kotest:kotest-assertions-core:${Versions.kotest}"
+    const val kotestProperty = "io.kotest:kotest-property:${Versions.kotest}"
+    const val mockito = "io.mockk:mockk:${Versions.mockito}"
 }

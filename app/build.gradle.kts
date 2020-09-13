@@ -50,8 +50,15 @@ dependencies {
     implementation(Libs.material)
     implementation(Libs.annotation)
     implementation(Libs.lifecycle)
+    implementation(Libs.koinScope)
+    implementation(Libs.koinViewModel)
+    implementation(Libs.koinAndroid)
 
     testImplementation(TestLibs.junit)
+    testImplementation(TestLibs.kotestRunner)
+    testImplementation(TestLibs.kotestAssertions)
+    testImplementation(TestLibs.kotestProperty)
+    testImplementation(TestLibs.mockito)
     androidTestImplementation(TestLibs.junitExtension)
     androidTestImplementation(TestLibs.espresso)
 
