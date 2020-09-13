@@ -1,4 +1,3 @@
-
 plugins {
     id("com.android.library")
     kotlin("android")
@@ -36,8 +35,15 @@ dependencies {
     implementation(Libs.kotlin)
     implementation(Libs.ktxCore)
     implementation(Libs.appcompat)
+    api(Libs.room)
+    implementation(Libs.roomKtx)
+    kapt(Libs.roomCompiler)
 
     testImplementation(TestLibs.junit)
+    testImplementation(TestLibs.kotestRunner)
+    testImplementation(TestLibs.kotestAssertions)
+    testImplementation(TestLibs.kotestProperty)
+    testImplementation(TestLibs.mockito)
     androidTestImplementation(TestLibs.junitExtension)
     androidTestImplementation(TestLibs.espresso)
 
