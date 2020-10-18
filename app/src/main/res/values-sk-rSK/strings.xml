@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NoteApp</string>
+
+    <string name="all_notes_fragment_title">Poznámky</string>
+    <string name="delete_dialog_cancel">Zrušiť</string>
+    <string name="delete_dialog_delete">Vymazať</string>
+    <string name="delete_dialog_title">"Chcete vymazať poznámku? "</string>
+    <string name="note_detail_fragment_title">Nová poznámka</string>
+    <string name="note_detail_last_modified">"Posledná zmena: "</string>
+    <string name="note_detail_no_content">Dáta neboli zmenené.</string>
+    <string name="note_detail_save">Uložiť</string>
+    <string name="note_detail_text">Zadajte poznámku</string>
+    <string name="note_detail_title">Zadajte názov</string>
+    <string name="save_dialog_cancel">Zrušiť</string>
+    <string name="save_dialog_discard">Zahodiť</string>
+    <string name="save_dialog_save">Uložiť</string>
+    <string name="save_dialog_title">Uložiť zmeny alebo ich zahodiť?</string>
+    <string name="note_detail_note_saved">Poznámka uložená</string>
+</resources>

@@ -14,22 +14,16 @@ class NotesLocalSourceImpl(private val noteDao: NoteDao) : NotesSource {
 
     override suspend fun observeAllNotes(): Flow<Result<List<NoteData>>> =
         noteDao.observeNotes().transform {
-            emit(
-                if (it.isEmpty()) {
-                    Result.Error(ErrorResult("Can not observe all notes"))
-                } else {
-                    Result.Success(it.toDataList())
-                }
-            )
+            emit(Result.Success(it.toDataList().sortedByDescending { noteData -> noteData.lastUpdateDate }))
         }
 
-    override suspend fun saveNote(noteData: NoteData): Result<Unit> = noteData.toEntity()?.let {
+    override suspend fun saveNote(noteData: NoteData): Result<Unit> = noteData.toEntity().let {
         if (noteDao.saveNote(it) > 0) {
             Result.Success(Unit)
         } else {
             Result.Error(ErrorResult("Can not save this note"), Unit)
         }
-    } ?: Result.Error(ErrorResult("Can not save this note - can not convert it to noteEntity"))
+    }
 
     override suspend fun removeNote(noteId: Int): Result<Unit> =
         if (noteDao.deleteNote(noteId) > 0) {
