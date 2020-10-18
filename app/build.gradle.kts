@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     id("kotlin-android-extensions")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -18,6 +19,7 @@ android {
 
         testInstrumentationRunner = Android.testInstrumentRunner
 
+        manifestPlaceholders = mapOf("libId" to Android.applicationId)
     }
 
     testBuildType = "debug"
@@ -25,6 +27,11 @@ android {
     sourceSets {
         getByName("main").java.srcDirs("src/main/kotlin")
         getByName("test").java.srcDirs("src/test/kotlin")
+    }
+
+    compileOptions {
+        sourceCompatibility = Android.sourceCompatibilityJava
+        targetCompatibility = Android.targetCompatibilityJava
     }
 
     kotlinOptions {
@@ -38,7 +45,6 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":infrastructure"))
 
-    implementation(Libs.googleAuth)
     implementation(Libs.kotlin)
     implementation(Libs.ktxCore)
     implementation(Libs.appcompat)
@@ -53,6 +59,8 @@ dependencies {
     implementation(Libs.koinScope)
     implementation(Libs.koinViewModel)
     implementation(Libs.koinAndroid)
+
+    debugImplementation(Libs.leakCanary)
 
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.kotestRunner)

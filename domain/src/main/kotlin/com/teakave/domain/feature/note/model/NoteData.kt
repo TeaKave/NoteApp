@@ -1,5 +1,6 @@
 package com.teakave.domain.feature.note.model
 
+import java.io.Serializable
 import java.util.Date
 
 /**
@@ -19,4 +20,4 @@ data class NoteData(
     val content: String?,
     val createdDate: Date,
     val lastUpdateDate: Date
-)
+) : Serializable

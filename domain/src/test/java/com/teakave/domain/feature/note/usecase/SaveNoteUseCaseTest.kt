@@ -17,8 +17,17 @@ class SaveNoteUseCaseTest : BehaviorSpec({
     Given("Save note UC with mocked repo") {
         val noteRepo = mockk<NotesRepository>()
         val useCase = SaveNoteUseCase(noteRepo)
-        When("Note content and title is empty") {
+        When("Note content and title is null") {
             val invalidNote = NoteData(null, null, null, Date(), Date())
+            Then("UC should return Result.Error and repo.saveNote is not called") {
+                useCase(invalidNote) shouldBe instanceOf(Result.Error::class)
+                coVerify(exactly = 0) {
+                    noteRepo.saveNote(any())
+                }
+            }
+        }
+        When("Note content and title is empty") {
+            val invalidNote = NoteData(null, "", "", Date(), Date())
             Then("UC should return Result.Error and repo.saveNote is not called") {
                 useCase(invalidNote) shouldBe instanceOf(Result.Error::class)
                 coVerify(exactly = 0) {

@@ -3,8 +3,8 @@ package com.teakave.infrastructure.feature.note.source.local.database.mapper
 import com.teakave.domain.feature.note.model.NoteData
 import com.teakave.infrastructure.feature.note.source.local.database.entity.NoteEntity
 
-fun NoteData.toEntity() = noteId?.let {
-    NoteEntity(it, title, content, createdDate, lastUpdateDate)
+fun NoteData.toEntity() = this.let {
+    NoteEntity(title, content, createdDate, lastUpdateDate).apply { noteId = it.noteId }
 }
 
 fun List<NoteEntity>.toDataList(): List<NoteData> {

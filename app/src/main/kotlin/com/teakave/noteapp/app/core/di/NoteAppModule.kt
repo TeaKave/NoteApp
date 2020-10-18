@@ -9,16 +9,23 @@ import com.teakave.domain.feature.note.usecase.SaveNoteUseCase
 import com.teakave.infrastructure.feature.common.database.AppDatabase
 import com.teakave.infrastructure.feature.common.database.BaseDatabase
 import com.teakave.infrastructure.feature.note.source.local.NotesLocalSourceImpl
+import com.teakave.noteapp.presentation.feature.common.KeyboardUtil
+import com.teakave.noteapp.presentation.feature.note.viewmodel.NoteViewModel
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val noteAppModule = module {
+
+    viewModel { NoteViewModel(get(), get(), get()) }
 
     factory { ObserveAllNotesUseCase(get()) }
 
     factory { RemoveNoteUseCase(get()) }
 
     factory { SaveNoteUseCase(get()) }
+
+    factory { KeyboardUtil() }
 
     single<NotesRepository> { NotesRepositoryImpl(get()) }
 

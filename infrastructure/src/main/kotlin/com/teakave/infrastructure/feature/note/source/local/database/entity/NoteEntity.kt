@@ -8,9 +8,6 @@ import java.util.*
 
 @Entity(tableName = NOTE_TABLE_NAME)
 data class NoteEntity(
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = NOTE_ID)
-    val noteId: Int,
     @ColumnInfo(name = TITLE)
     val title: String?,
     @ColumnInfo(name = CONTENT)
@@ -20,6 +17,10 @@ data class NoteEntity(
     @ColumnInfo(name = UPDATED_DATE)
     val lastUpdateDate: Date
 ) {
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = NOTE_ID)
+    var noteId: Int? = null
+
     companion object {
         /**
          * Table name for the DB of this entity

@@ -15,7 +15,7 @@ class SaveNoteUseCase(private val notesRepository: NotesRepository) :
     UseCaseResult<Unit, NoteData>() {
 
     override suspend fun doWork(params: NoteData): Result<Unit> =
-        if (params.content == null && params.title == null) {
+        if (params.content.isNullOrEmpty() && params.title.isNullOrEmpty()) {
             Result.Error(
                 ErrorResult("Can not save this note. Note content and title is empty"),
                 Unit

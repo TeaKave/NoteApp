@@ -38,14 +38,18 @@ class NoteMapperTest : BehaviorSpec({
                 lastUpdateDate = Date()
             )
             Then("Mapper should return null") {
-                noteData.toEntity() shouldBe null
+                val result = noteData.toEntity()
+                result shouldBe instanceOf(NoteEntity::class)
+                result.content shouldBe null
+                result.title shouldBe null
+                result.createdDate shouldNotBe null
+                result.lastUpdateDate shouldNotBe null
             }
         }
         When("Mapping valid data from NoteEntity to NoteData") {
             val content = "content string value1234567890"
             val noteEntity =
                 NoteEntity(
-                    noteId = 223,
                     title = "title string value",
                     content = content,
                     createdDate = Date(),
@@ -54,7 +58,7 @@ class NoteMapperTest : BehaviorSpec({
             Then("Mapper should return a valid NoteData object") {
                 val result = noteEntity.toData()
                 result shouldBe instanceOf(NoteData::class)
-                result.noteId shouldBe 223
+                result.noteId shouldBe null
                 result.content shouldBe content
             }
         }
