@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-android")
 }
 
 android {
@@ -62,6 +63,8 @@ dependencies {
     implementation(Libs.koinScope)
     implementation(Libs.koinViewModel)
     implementation(Libs.koinAndroid)
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
     debugImplementation(Libs.leakCanary)
 

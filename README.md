@@ -2,7 +2,14 @@
 The main objective of this sample project is to create a playground where I can test new libraries and technologies, experiment with architecture, unit and UI testing.
 
 **Current UI**
-![cleannote-merged](/uploads/1d879571c000db1152b8b7c4b5b85807/cleannote-merged.jpg)
+
+Light mode
+
+![cleannote-merged](/uploads/7523f6b49c879069c3fccbe4cffa8a6a/cleannote-merged.jpg)
+
+Dark mode
+
+![cleannote-merged-dark](/uploads/d4322da6613dfb47cb2e4c852e167e8d/cleannote-merged-dark.jpg)
 
 ## Changelog
 Keep changelog! Check out [keepchangelog.com]
@@ -23,7 +30,7 @@ Keep changelog! Check out [keepchangelog.com]
     - switch dark theme (?)
 - **Update the UI:**
     - ~~add timestamp to overview and detail~~
-    - add support for Dark Theme
+    - ~~add support for Dark Theme~~
     - create an icon
 
 M.N.

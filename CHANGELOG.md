@@ -6,8 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 ### 02.12.2020
-#### Changed
+#### Added
 - [Minor] Added timestamp to detail and item view
+- [Minor] Support Dark Theme
+
+#### Changed
 - [Minor] UX fix - Start title and note with upper case letter by default
 - [Minor] Updated NotesAdapter - changed DiffUtil to AsyncListDiffer
 
