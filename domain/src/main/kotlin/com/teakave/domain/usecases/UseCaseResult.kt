@@ -1,6 +1,7 @@
 package com.teakave.domain.usecases
 
 import com.teakave.domain.Result
+
 /**
  * Abstract class for a Use Case (Interactor in terms of Clean Architecture).
  * This interface represents an execution unit for different use cases (this means any use case

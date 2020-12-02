@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    id("kotlin-android-extensions")
     id("androidx.navigation.safeargs.kotlin")
 }
 
@@ -20,6 +19,10 @@ android {
         testInstrumentationRunner = Android.testInstrumentRunner
 
         manifestPlaceholders = mapOf("libId" to Android.applicationId)
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     testBuildType = "debug"

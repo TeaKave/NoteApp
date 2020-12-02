@@ -75,7 +75,9 @@ class SaveNoteUseCaseTest : BehaviorSpec({
                 noteRepo.saveNote(any())
             } returns Result.Success(Unit)
             Then("UC should return Result.Success") {
-                useCase(NoteData(null, null, "content", Date(), Date())) shouldBe Result.Success(Unit)
+                useCase(NoteData(null, null, "content", Date(), Date())) shouldBe Result.Success(
+                    Unit
+                )
                 // already called twice
                 coVerify(exactly = 3) {
                     noteRepo.saveNote(any())
@@ -87,7 +89,9 @@ class SaveNoteUseCaseTest : BehaviorSpec({
                 noteRepo.saveNote(any())
             } returns Result.Success(Unit)
             Then("UC should return Result.Success") {
-                useCase(NoteData(null, "title", "content", Date(), Date())) shouldBe Result.Success(Unit)
+                useCase(NoteData(null, "title", "content", Date(), Date())) shouldBe Result.Success(
+                    Unit
+                )
                 // already called three times
                 coVerify(exactly = 4) {
                     noteRepo.saveNote(any())

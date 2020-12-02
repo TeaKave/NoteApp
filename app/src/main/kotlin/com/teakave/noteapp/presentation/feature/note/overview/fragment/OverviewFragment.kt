@@ -8,11 +8,9 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.teakave.noteapp.R
+import com.teakave.noteapp.databinding.FragmentOverviewBinding
 import com.teakave.noteapp.presentation.feature.note.overview.adapter.NotesAdapter
 import com.teakave.noteapp.presentation.feature.note.viewmodel.NoteViewModel
-import kotlinx.android.synthetic.main.fragment_overview.button_add_note
-import kotlinx.android.synthetic.main.fragment_overview.recycler_view_notes
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class OverviewFragment : Fragment() {
@@ -20,11 +18,23 @@ class OverviewFragment : Fragment() {
     private val viewModel: NoteViewModel by sharedViewModel()
     private lateinit var notesAdapter: NotesAdapter
 
+    private var _binding: FragmentOverviewBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_overview, container, false)
+    ): View? {
+        _binding = FragmentOverviewBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        // set recycler view adapter null so it does not cause memory leak
+        binding.recyclerViewNotes.adapter = null
+        super.onDestroyView()
+        _binding = null
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -46,12 +56,6 @@ class OverviewFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         observeAllNotes()
         observeSelectedNote()
-    }
-
-    override fun onDestroyView() {
-        // set recycler view adapter null so it does not cause memory leak
-        recycler_view_notes?.adapter = null
-        super.onDestroyView()
     }
 
     /**
@@ -94,13 +98,13 @@ class OverviewFragment : Fragment() {
             deleteClickListener = {
                 viewModel.removeNote(it)
             })
-        recycler_view_notes?.adapter = notesAdapter
+        binding.recyclerViewNotes.adapter = notesAdapter
     }
 
     /**
      * Add note button navigates to note detail fragment with no selected note.
      */
-    private fun setupAddNoteButtonListener() = button_add_note.setOnClickListener {
+    private fun setupAddNoteButtonListener() = binding.buttonAddNote.setOnClickListener {
         showNoteDetailFragment()
     }
 

@@ -8,7 +8,7 @@ import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
 import io.kotest.matchers.types.instanceOf
-import java.util.*
+import java.util.Date
 
 class NoteMapperTest : BehaviorSpec({
     Given("Note mapper") {

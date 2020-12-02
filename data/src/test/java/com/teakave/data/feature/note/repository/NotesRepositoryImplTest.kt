@@ -12,7 +12,7 @@ import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flowOf
-import java.util.*
+import java.util.Date
 
 class NotesRepositoryImplTest : BehaviorSpec({
 

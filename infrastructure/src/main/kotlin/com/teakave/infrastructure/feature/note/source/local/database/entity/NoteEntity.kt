@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.teakave.infrastructure.feature.note.source.local.database.entity.NoteEntity.Companion.NOTE_TABLE_NAME
-import java.util.*
+import java.util.Date
 
 @Entity(tableName = NOTE_TABLE_NAME)
 data class NoteEntity(
