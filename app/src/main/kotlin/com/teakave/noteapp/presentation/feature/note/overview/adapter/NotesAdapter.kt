@@ -1,15 +1,11 @@
 package com.teakave.noteapp.presentation.feature.note.overview.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.teakave.domain.feature.note.model.NoteData
-import com.teakave.noteapp.R
-import kotlinx.android.synthetic.main.note_item.view.button_note_item_delete
-import kotlinx.android.synthetic.main.note_item.view.text_note_item_content
-import kotlinx.android.synthetic.main.note_item.view.text_note_item_title
+import com.teakave.noteapp.databinding.NoteItemBinding
 
 class NotesAdapter(
     private val clickListener: (NoteData) -> Unit,
@@ -19,11 +15,7 @@ class NotesAdapter(
     private var notes = listOf<NoteData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
-        LayoutInflater.from(parent.context).inflate(
-            R.layout.note_item,
-            parent,
-            false
-        )
+        NoteItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
     override fun getItemCount(): Int = notes.size
@@ -49,7 +41,7 @@ class NotesAdapter(
         result.dispatchUpdatesTo(this)
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(private val binding: NoteItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
             noteData: NoteData,
@@ -57,13 +49,13 @@ class NotesAdapter(
             deleteClickListener: (Int?) -> Unit
         ) {
             noteData.title?.let {
-                itemView.text_note_item_title.text = it
+                binding.textNoteItemTitle.text = it
             }
             noteData.content?.let {
-                itemView.text_note_item_content.text = it
+                binding.textNoteItemContent.text = it
             }
-            itemView.setOnClickListener { clickListener(noteData) }
-            itemView.button_note_item_delete.setOnClickListener { deleteClickListener(noteData.noteId) }
+            binding.root.setOnClickListener { clickListener(noteData) }
+            binding.buttonNoteItemDelete.setOnClickListener { deleteClickListener(noteData.noteId) }
         }
 
     }

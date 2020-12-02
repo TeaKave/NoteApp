@@ -14,7 +14,10 @@ class NotesLocalSourceImpl(private val noteDao: NoteDao) : NotesSource {
 
     override suspend fun observeAllNotes(): Flow<Result<List<NoteData>>> =
         noteDao.observeNotes().transform {
-            emit(Result.Success(it.toDataList().sortedByDescending { noteData -> noteData.lastUpdateDate }))
+            emit(
+                Result.Success(
+                    it.toDataList().sortedByDescending { noteData -> noteData.lastUpdateDate })
+            )
         }
 
     override suspend fun saveNote(noteData: NoteData): Result<Unit> = noteData.toEntity().let {

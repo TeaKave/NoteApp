@@ -8,12 +8,9 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.teakave.domain.feature.note.model.NoteData
-import com.teakave.noteapp.R
+import com.teakave.noteapp.databinding.FragmentNoteDetailBinding
 import com.teakave.noteapp.presentation.feature.common.KeyboardUtil
 import com.teakave.noteapp.presentation.feature.note.viewmodel.NoteViewModel
-import kotlinx.android.synthetic.main.fragment_note_detail.edit_text_note_content
-import kotlinx.android.synthetic.main.fragment_note_detail.edit_text_note_title
-import kotlinx.android.synthetic.main.fragment_note_detail.floating_button_save_note
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import java.util.Date
@@ -22,6 +19,8 @@ class DetailFragment : Fragment() {
 
     private val viewModel by sharedViewModel<NoteViewModel>()
     private val keyboardUtil by inject<KeyboardUtil>()
+    private var _binding: FragmentNoteDetailBinding? = null
+    private val binding get() = _binding!!
 
     /**
      * This variable is used for new/old Note identification. If this variable is not null it means that the user is editing an old note.
@@ -29,12 +28,19 @@ class DetailFragment : Fragment() {
      * Initialization in [onViewCreated] function.
      */
     private var note: NoteData? = null
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_note_detail, container, false)
+    ): View? {
+        _binding = FragmentNoteDetailBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -62,8 +68,8 @@ class DetailFragment : Fragment() {
      * Update note title and content.
      */
     private fun updateUI(noteData: NoteData?) = noteData?.let {
-        edit_text_note_title?.setText(it.title)
-        edit_text_note_content?.setText(it.content)
+        binding.editTextNoteTitle.setText(it.title)
+        binding.editTextNoteContent.setText(it.content)
     }
 
     /**
@@ -73,7 +79,7 @@ class DetailFragment : Fragment() {
      *
      * This function calls saveNote function in our viewModel.
      */
-    private fun setupOnSaveClickedListener() = floating_button_save_note?.setOnClickListener {
+    private fun setupOnSaveClickedListener() = binding.floatingButtonSaveNote.setOnClickListener {
         setupSaveNoteResultObserver()
         saveNote()
     }
@@ -84,8 +90,8 @@ class DetailFragment : Fragment() {
     private fun saveNote() = viewModel.saveNote(
         NoteData(
             noteId = note?.noteId,
-            title = edit_text_note_title?.text.toString(),
-            content = edit_text_note_content?.text.toString(),
+            title = binding.editTextNoteTitle.text.toString(),
+            content = binding.editTextNoteContent.text.toString(),
             createdDate = note?.createdDate ?: Date(),
             lastUpdateDate = Date()
         )
