@@ -9,20 +9,20 @@ Keep changelog! Check out [keepchangelog.com]
 
 ## Todos: 
 - ~~migrate from synthetic to view binding~~
-- update recycler view adapter
+- ~~update recycler view adapter~~
 - create a branch with Hilt DI instead of Koin
 - create remote calls
 - add UI tests
 - migrate from LiveData to Flow
 - **UX improvements:**
-    - start title and note with upper case letter by default
+    - ~~start title and note with upper case letter by default~~
     - change recycler view to grid view (?)
     - support selection mode and/or long click
 - **Add Settings:**
     - demo mode (remote calls)
     - switch dark theme (?)
 - **Update the UI:**
-    - add timestamp to overview and detail
+    - ~~add timestamp to overview and detail~~
     - add support for Dark Theme
     - create an icon
 
