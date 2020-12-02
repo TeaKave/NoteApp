@@ -26,7 +26,6 @@ object GradlePlugins {
 
 object Versions {
     const val gradleBuildTools = "4.0.0"
-    const val gradle = "4.0.1"
     const val kotlin = "1.3.50"
     const val appcompat = "1.2.0"
 
@@ -40,7 +39,7 @@ object Versions {
     const val navigation = "2.3.0"
     const val legacySupport = "1.0.0"
     const val recyclerView = "1.1.0"
-    const val material = "1.2.0"
+    const val material = "1.2.1"
     const val annotation = "1.1.0"
     const val lifecycle = "2.2.0"
     const val junitExtension = "1.1.1"

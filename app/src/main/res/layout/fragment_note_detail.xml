@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/floating_button_margin_l"
         android:layout_marginBottom="@dimen/floating_button_margin_xl"
-        android:backgroundTint="@color/save_floating_btn"
+        android:theme="@style/PrimaryActionButton"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/ic_done_btn"
