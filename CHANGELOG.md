@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### 02.12.2020
+#### Changed
+- [Minor] Added timestamp to detail and item view
+- [Minor] UX fix - Start title and note with upper case letter by default
+- [Minor] Updated NotesAdapter - changed DiffUtil to AsyncListDiffer
+
 ### 01.12.2020
 #### Changed
 - [Major] Migrated from Kotlin synthetics to Jetpack view binding

@@ -1,24 +1,9 @@
 <resources>
     <string name="app_name">NoteApp</string>
 
-    <string name="note_detail_fragment_title">New note</string>
     <string name="note_detail_title">Enter title</string>
     <string name="note_detail_text">Enter note</string>
-    <string name="note_detail_save">Save</string>
-    <string name="note_detail_no_content">No content to save. Memo discarded.</string>
     <string name="note_detail_last_modified">Last modified:</string>
-    <string name="note_detail_note_saved">Note saved</string>
-
-    <string name="all_notes_fragment_title">Notes</string>
-
-    <string name="save_dialog_title">Save your changes or discard them?</string>
-    <string name="save_dialog_cancel">Cancel</string>
-    <string name="save_dialog_discard">Discard</string>
-    <string name="save_dialog_save">Save</string>
-
-    <string name="delete_dialog_title">Delete this note?</string>
-    <string name="delete_dialog_cancel">Cancel</string>
-    <string name="delete_dialog_delete">Delete</string>
 
     <string name="delete_button_description" translatable="false">Delete note</string>
 </resources>

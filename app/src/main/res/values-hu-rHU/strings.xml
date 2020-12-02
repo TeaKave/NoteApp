@@ -2,19 +2,7 @@
 <resources>
     <string name="app_name">NoteApp</string>
 
-    <string name="all_notes_fragment_title">Jegyzetek</string>
-    <string name="delete_dialog_cancel">Mégse</string>
-    <string name="delete_dialog_delete">Törlés</string>
-    <string name="delete_dialog_title">Törli a jegyzetet?</string>
-    <string name="note_detail_fragment_title">Új jegyzet</string>
     <string name="note_detail_last_modified">Legutóbbi módosítás:</string>
-    <string name="note_detail_no_content">Az adatok nem változtak.</string>
-    <string name="note_detail_save">Mentés</string>
     <string name="note_detail_text">Adja meg a címet</string>
     <string name="note_detail_title">Írja be a jegyzetet</string>
-    <string name="save_dialog_cancel">Mégse</string>
-    <string name="save_dialog_discard">Elvetés</string>
-    <string name="save_dialog_save">Mentés</string>
-    <string name="save_dialog_title">Menti a változtatásokat, vagy elveti őket?</string>
-    <string name="note_detail_note_saved">Jegyzet mentve</string>
 </resources>

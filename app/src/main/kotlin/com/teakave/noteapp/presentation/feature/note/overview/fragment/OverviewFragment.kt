@@ -9,14 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.teakave.noteapp.databinding.FragmentOverviewBinding
-import com.teakave.noteapp.presentation.feature.note.overview.adapter.NotesAdapter
+import com.teakave.noteapp.presentation.feature.note.overview.adapter.NotesRecyclerAdapter
 import com.teakave.noteapp.presentation.feature.note.viewmodel.NoteViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class OverviewFragment : Fragment() {
 
     private val viewModel: NoteViewModel by sharedViewModel()
-    private lateinit var notesAdapter: NotesAdapter
+    private lateinit var notesAdapter: NotesRecyclerAdapter
 
     private var _binding: FragmentOverviewBinding? = null
     private val binding get() = _binding!!
@@ -91,7 +91,7 @@ class OverviewFragment : Fragment() {
      * Sets up notes adapter.
      */
     private fun setupNotesAdapter() {
-        notesAdapter = NotesAdapter(
+        notesAdapter = NotesRecyclerAdapter(
             clickListener = {
                 viewModel.setSelectedNote(it)
             },
