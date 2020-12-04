@@ -3,6 +3,8 @@ plugins {
     kotlin("android")
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-android")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
 }
 
 android {
@@ -60,11 +62,10 @@ dependencies {
     implementation(Libs.material)
     implementation(Libs.annotation)
     implementation(Libs.lifecycle)
-    implementation(Libs.koinScope)
-    implementation(Libs.koinViewModel)
-    implementation(Libs.koinAndroid)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation(Libs.hilt)
+    kapt(Libs.hiltCompiler)
+    implementation(Libs.hiltViewModel)
+    kapt(Libs.hiltViewModelCompiler)
 
     debugImplementation(Libs.leakCanary)
 
@@ -76,4 +77,8 @@ dependencies {
     androidTestImplementation(TestLibs.junitExtension)
     androidTestImplementation(TestLibs.espresso)
 
+}
+
+kapt {
+    correctErrorTypes = true
 }

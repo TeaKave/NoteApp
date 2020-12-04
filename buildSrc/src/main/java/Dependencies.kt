@@ -21,6 +21,7 @@ object GradlePlugins {
     const val androidGradle = "com.android.tools.build:gradle:${Versions.gradleBuildTools}"
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.safeArgs}"
+    const val hiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
 }
 
 
@@ -45,7 +46,8 @@ object Versions {
     const val junitExtension = "1.1.1"
     const val espresso = "3.2.0"
     const val coroutines = "1.3.7"
-    const val koin = "2.1.6"
+    const val hilt = "2.30.1-alpha"
+    const val hiltViewModel = "1.0.0-alpha02"
     const val room = "2.2.5"
     const val safeArgs = "2.3.0"
     const val leakCanary = "2.4"
@@ -65,9 +67,10 @@ object Libs {
     const val annotation = "androidx.annotation:annotation:${Versions.annotation}"
     const val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
-    const val koinAndroid = "org.koin:koin-android:${Versions.koin}"
-    const val koinScope = "org.koin:koin-androidx-scope:${Versions.koin}"
-    const val koinViewModel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
+    const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val hiltViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltViewModel}"
+    const val hiltViewModelCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltViewModel}"
     const val room = "androidx.room:room-runtime:${Versions.room}"
     const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"

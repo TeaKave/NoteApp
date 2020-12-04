@@ -17,10 +17,9 @@ Keep changelog! Check out [keepchangelog.com]
 ## Todos: 
 - ~~migrate from synthetic to view binding~~
 - ~~update recycler view adapter~~
-- create a branch with Hilt DI instead of Koin
+- ~~create a branch with Hilt DI instead of Koin~~
 - create remote calls
 - add UI tests
-- migrate from LiveData to Flow
 - **UX improvements:**
     - ~~start title and note with upper case letter by default~~
     - change recycler view to grid view (?)

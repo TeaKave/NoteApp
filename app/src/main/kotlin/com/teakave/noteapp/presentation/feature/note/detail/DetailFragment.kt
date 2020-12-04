@@ -9,22 +9,22 @@ import androidx.activity.OnBackPressedCallback
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.teakave.domain.feature.note.model.NoteData
 import com.teakave.noteapp.databinding.FragmentNoteDetailBinding
 import com.teakave.noteapp.presentation.feature.common.KeyboardUtil
 import com.teakave.noteapp.presentation.feature.note.viewmodel.NoteViewModel
-import org.koin.android.ext.android.inject
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Date
 
 const val LAST_MODIFIED_DATE_FORMAT = "dd.MMMM.yyyy HH:mm"
 
+@AndroidEntryPoint
 class DetailFragment : Fragment() {
 
-    private val viewModel by sharedViewModel<NoteViewModel>()
-    private val keyboardUtil by inject<KeyboardUtil>()
+    private val viewModel by viewModels<NoteViewModel>()
 
     private var _binding: FragmentNoteDetailBinding? = null
     private val binding get() = _binding!!
@@ -146,7 +146,7 @@ class DetailFragment : Fragment() {
     /**
      * Hides keyboard
      */
-    private fun hideKeyboard() = keyboardUtil.hideKeyboard(view)
+    private fun hideKeyboard() = KeyboardUtil.hideKeyboard(view)
 
     private fun navigateUp() = findNavController().navigateUp()
 

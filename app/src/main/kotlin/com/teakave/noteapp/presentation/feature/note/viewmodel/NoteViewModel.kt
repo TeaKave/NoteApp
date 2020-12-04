@@ -1,5 +1,6 @@
 package com.teakave.noteapp.presentation.feature.note.viewmodel
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,13 +13,14 @@ import com.teakave.domain.feature.note.usecase.SaveNoteUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import org.koin.core.KoinComponent
 
-class NoteViewModel(
+class NoteViewModel
+@ViewModelInject
+constructor(
     private val observeAllNotesUseCase: ObserveAllNotesUseCase,
     private val saveNoteUseCase: SaveNoteUseCase,
     private val removeNoteUseCase: RemoveNoteUseCase
-) : ViewModel(), KoinComponent {
+) : ViewModel() {
 
     private val _notes = MutableLiveData<Result<List<NoteData>>>()
     val notes: LiveData<Result<List<NoteData>>> = _notes
