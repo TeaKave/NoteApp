@@ -16,6 +16,7 @@ Keep changelog! Check out [keepchangelog.com]
 
 ## DI comparison (Koin vs Hilt)
 Koin branch: *feature/koin-di*
+
 Hilt branch: *feature/hilt-di*
 
 Both DI libraries are relatively easy to use.
