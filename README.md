@@ -22,7 +22,7 @@ Both DI libraries are relatively easy to use.
 
 Size comparison for APKs:
 
-<img src="https://gitlab.com/mn155gi/cleannoteapp/uploads/4aa6713d08e79badd4a656f149f71b08/di-comparison.png" width="250">
+<img src="https://gitlab.com/mn155gi/cleannoteapp/uploads/4aa6713d08e79badd4a656f149f71b08/di-comparison.png" width="350">
 
 ## Todos: 
 - ~~migrate from synthetic to view binding~~
