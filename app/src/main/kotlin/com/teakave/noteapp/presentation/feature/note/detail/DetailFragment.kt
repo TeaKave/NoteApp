@@ -9,7 +9,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.teakave.domain.feature.note.model.NoteData
 import com.teakave.noteapp.databinding.FragmentNoteDetailBinding
@@ -24,7 +24,7 @@ const val LAST_MODIFIED_DATE_FORMAT = "dd.MMMM.yyyy HH:mm"
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
 
-    private val viewModel by viewModels<NoteViewModel>()
+    private val viewModel by activityViewModels<NoteViewModel>()
 
     private var _binding: FragmentNoteDetailBinding? = null
     private val binding get() = _binding!!
