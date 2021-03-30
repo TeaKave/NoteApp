@@ -1,8 +1,8 @@
 package com.teakave.infrastructure.feature.note.source.local
 
 import com.teakave.data.feature.note.source.NotesSource
-import com.teakave.domain.ErrorResult
-import com.teakave.domain.Result
+import com.arch.domain.ErrorResult
+import com.arch.domain.Result
 import com.teakave.domain.feature.note.model.NoteData
 import com.teakave.infrastructure.feature.note.source.local.database.dao.NoteDao
 import com.teakave.infrastructure.feature.note.source.local.database.mapper.toDataList

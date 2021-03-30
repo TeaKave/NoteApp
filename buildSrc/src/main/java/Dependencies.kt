@@ -20,18 +20,19 @@ object Android {
 object GradlePlugins {
     const val androidGradle = "com.android.tools.build:gradle:${Versions.gradleBuildTools}"
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
-    const val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.safeArgs}"
+    const val safeArgs =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.safeArgs}"
 }
 
 
 object Versions {
     const val gradleBuildTools = "4.0.0"
-    const val kotlin = "1.3.50"
+    const val kotlin = "1.4.31"
     const val appcompat = "1.2.0"
 
     /* test */
     const val junit = "4.13"
-    const val kotest = "4.2.4"
+    const val kotest = "4.4.3"
     const val mockito = "1.10.0"
 
     const val ktxCore = "1.3.1"
@@ -44,11 +45,12 @@ object Versions {
     const val lifecycle = "2.2.0"
     const val junitExtension = "1.1.1"
     const val espresso = "3.2.0"
-    const val coroutines = "1.3.7"
+    const val coroutines = "1.4.3"
     const val koin = "2.1.6"
     const val room = "2.2.5"
     const val safeArgs = "2.3.0"
     const val leakCanary = "2.4"
+    const val interactor = "0.0.2"
 }
 
 object Libs {
@@ -72,6 +74,7 @@ object Libs {
     const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
     const val leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}"
+    const val interactor = "com.github.TeaKave:clean-arch-usecases:${Versions.interactor}"
 
 }
 

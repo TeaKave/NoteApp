@@ -38,6 +38,7 @@ dependencies {
     api(Libs.room)
     implementation(Libs.roomKtx)
     kapt(Libs.roomCompiler)
+    implementation(Libs.interactor)
 
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.kotestRunner)

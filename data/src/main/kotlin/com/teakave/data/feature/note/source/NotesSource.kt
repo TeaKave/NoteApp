@@ -1,6 +1,6 @@
 package com.teakave.data.feature.note.source
 
-import com.teakave.domain.Result
+import com.arch.domain.Result
 import com.teakave.domain.feature.note.model.NoteData
 import kotlinx.coroutines.flow.Flow
 

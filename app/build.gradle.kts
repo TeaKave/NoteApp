@@ -38,6 +38,10 @@ android {
         targetCompatibility = Android.targetCompatibilityJava
     }
 
+    packagingOptions {
+        exclude("META-INF/domain.kotlin_module")
+    }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -63,8 +67,7 @@ dependencies {
     implementation(Libs.koinScope)
     implementation(Libs.koinViewModel)
     implementation(Libs.koinAndroid)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation(Libs.interactor)
 
     debugImplementation(Libs.leakCanary)
 

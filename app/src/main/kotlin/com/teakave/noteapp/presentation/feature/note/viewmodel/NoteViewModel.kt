@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.teakave.domain.Result
+import com.arch.domain.Result
 import com.teakave.domain.feature.note.model.NoteData
 import com.teakave.domain.feature.note.usecase.ObserveAllNotesUseCase
 import com.teakave.domain.feature.note.usecase.RemoveNoteUseCase

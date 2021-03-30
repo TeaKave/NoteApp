@@ -1,9 +1,9 @@
 package com.teakave.domain.feature.note.usecase
 
-import com.teakave.domain.Result
+import com.arch.domain.Result
+import com.arch.domain.usecases.UseCaseNoParams
 import com.teakave.domain.feature.note.model.NoteData
 import com.teakave.domain.feature.note.repository.NotesRepository
-import com.teakave.domain.usecases.UseCaseNoParams
 import kotlinx.coroutines.flow.Flow
 
 /**

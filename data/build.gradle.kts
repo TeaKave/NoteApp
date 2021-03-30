@@ -8,6 +8,7 @@ dependencies {
     implementation(project(":domain"))
     implementation(Libs.coroutines)
     implementation(Libs.kotlin)
+    implementation(Libs.interactor)
 
     testImplementation(TestLibs.mockito)
     testImplementation(TestLibs.kotestRunner)

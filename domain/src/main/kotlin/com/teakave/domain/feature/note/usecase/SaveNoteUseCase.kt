@@ -1,10 +1,10 @@
 package com.teakave.domain.feature.note.usecase
 
-import com.teakave.domain.ErrorResult
-import com.teakave.domain.Result
+import com.arch.domain.ErrorResult
+import com.arch.domain.Result
+import com.arch.domain.usecases.UseCaseResult
 import com.teakave.domain.feature.note.model.NoteData
 import com.teakave.domain.feature.note.repository.NotesRepository
-import com.teakave.domain.usecases.UseCaseResult
 
 /**
  * Save note UseCase returns Result.Success if note is saved or updated, Result.Error otherwise

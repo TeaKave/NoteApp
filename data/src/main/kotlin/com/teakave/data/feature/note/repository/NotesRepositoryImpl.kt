@@ -1,7 +1,7 @@
 package com.teakave.data.feature.note.repository
 
 import com.teakave.data.feature.note.source.NotesSource
-import com.teakave.domain.Result
+import com.arch.domain.Result
 import com.teakave.domain.feature.note.model.NoteData
 import com.teakave.domain.feature.note.repository.NotesRepository
 import kotlinx.coroutines.flow.Flow
